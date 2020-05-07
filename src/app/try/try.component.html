@@ -1,0 +1,61 @@
+<!-- ngIg structural directive -->
+<div *ngIf="displayDir else Elseblock" >
+    <h2>
+        Angular built in Directive ngIf true
+    </h2>   
+</div>
+<ng-template #Elseblock>
+    <h2>
+        Elseblock is here
+    </h2>
+</ng-template>
+<!-- ngIf alt syntax -->
+<div *ngIf = "true then thenBlock else altblock"></div>
+<ng-template #thenBlock>
+    <h2>
+        ngIf alt syntax then block
+    </h2>
+</ng-template>
+<ng-template #altblock>
+    <h2>
+        ngIf alt syntax then alt block
+    </h2>
+</ng-template>
+<!-- ngSwitch directive -->
+<div [ngSwitch]="color">
+    <div *ngSwitchCase='"blue"'>
+        <h2>
+            switch case blue
+        </h2>
+    </div>
+    <div *ngSwitchCase='"yellow"'>
+        <h2>
+            switch case yellow
+        </h2>
+    </div>
+    <div *ngSwitchCase='"green"'>
+        <h2>
+            switch case green
+        </h2>
+    </div>
+    <div *ngSwitchCase='"red"'>
+        <h2>
+            switch case red
+        </h2>
+    </div>
+    <div *ngSwitchDefault>
+        <h2>
+            switch case ngSwitchDefault
+        </h2>
+    </div>    
+</div>
+<!-- ngFor directive -->
+<div *ngFor="let day of days index as i">
+    <h2>Day{{i+1}}{{" is "+day}}</h2>
+</div>
+<!-- components interactions -->
+<!-- child to parent interaction -->
+<button (click)="displayEvt()">Display Msg</button>
+
+<!-- parent to child interaction -->
+<h3>{{"Designed by" +parentData}}</h3>
